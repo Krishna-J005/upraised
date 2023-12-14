@@ -112,7 +112,7 @@ export default function Home() {
                         <div className='text-black-400' >
                           {
                                 questions?.[currentQuestion - 1]?.RESPONSE_DETAILS.map((curr,id) => (
-                                <div id={id} className="w-80 p-5 mb-3 border-2 rounded-xl">
+                                <div key={id} className="w-80 p-5 mb-3 border-2 rounded-xl">
                                         <input type="radio" value={curr} onChange={(e) => handleRadioChange(e.target.value, questions?.[currentQuestion - 1])} checked={response?.[questions?.[currentQuestion - 1]?.QUESTION_ID] === curr} />
                                         <label for={curr} className="px-3">{curr}</label>
                                 </div>
@@ -123,7 +123,7 @@ export default function Home() {
                         <div className='text-black-400' >
                             {
                                 questions?.[currentQuestion - 1]?.RESPONSE_DETAILS.map((curr, id) => (
-                                    <div id={id} className="w-80 p-5 mb-3 border-2 rounded-xl">
+                                    <div key={id} className="w-80 p-5 mb-3 border-2 rounded-xl">
                                         {response?.[questions?.[currentQuestion - 1]?.QUESTION_ID]?.includes(curr)}
                                         <input 
                                             type="checkbox" 
