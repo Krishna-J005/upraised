@@ -3,7 +3,7 @@ export const questions = [
         "QUESTION_ID": 1,
         "QUESTION": "Stack is a linear data structure",
         "QUESTION_TYPE": "MCQ_SINGLE",
-        "QUESTION_IMG": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2Fswlh%2Fstack-data-structure-practical-applications-operations-e4e308008752&psig=AOvVaw0Mvl_Yu-3qpCqrEyPVWHVQ&ust=1702618871566000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNCkgtubjoMDFQAAAAAdAAAAABAD",
+        "QUESTION_IMG": "https://media.geeksforgeeks.org/wp-content/uploads/geek-stack-1.png",
         "CREATED_AT": "2023-01-01T12:00:00",
         "CREATED_BY": "Upraised Hiring Team",
         "IS_NEGATIVE_MARKING_ALLOWED": true,
