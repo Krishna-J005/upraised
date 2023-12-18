@@ -14,14 +14,14 @@ export default function Home() {
 
 
     const getAllQuestions = async () => {
-        const resp = await fetch('https://upraised-dusky.vercel.app/api/quiz')
+        const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/quiz`)
         let result = await resp.json();
         setTotalQuestions(result?.questions?.length);
         setQuestions(result?.questions);
     }
     const submitResponse = async (payload) => {
         try {
-            const resp = await fetch('https://upraised-dusky.vercel.app/api/quiz', {
+            const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/quiz`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -114,7 +114,7 @@ export default function Home() {
                                 questions?.[currentQuestion - 1]?.RESPONSE_DETAILS.map((curr,id) => (
                                 <div key={id} className="w-80 p-5 mb-3 border-2 rounded-xl">
                                         <input type="radio" value={curr} onChange={(e) => handleRadioChange(e.target.value, questions?.[currentQuestion - 1])} checked={response?.[questions?.[currentQuestion - 1]?.QUESTION_ID] === curr} />
-                                        <label for={curr} className="px-3">{curr}</label>
+                                        <label for={curr} className="px-3 text-gray-500">{curr}</label>
                                 </div>
                             ))
                           }
@@ -131,7 +131,7 @@ export default function Home() {
                                             onChange={(e) => handleCheckBoxChange(e.target.checked, e.target.value, questions?.[currentQuestion - 1])} 
                                             checked={response?.[questions?.[currentQuestion - 1]?.QUESTION_ID]?.includes(curr)}
                                         />
-                                        <label for={curr} className="px-3 text-black-500">{curr}</label>
+                                        <label for={curr} className="px-3 text-gray-500">{curr}</label>
                                     </div>
                                 ))
                             }
