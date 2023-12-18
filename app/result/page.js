@@ -16,7 +16,7 @@ export default function Result() {
     return (
         <div className="h-screen flex items-end justify-center">
             <div className="w-full h-90 rounded-t-3xl  px-4 pb-4 bg-white justify-center">
-                <div className='flex justify-center text-4xl pt-5'>Your Result</div>
+                <div className='flex justify-center text-4xl pt-5 text-gray-900'>Your Result</div>
                 <div className='flex justify-center py-3'>
                     <div className='pa-8 w-90 shadow-lg rounded-full flex justify-center items-center bg-white'>
                         <CircularResult percentage={(USER_SCORE/MAX_SCORE)*100} />
