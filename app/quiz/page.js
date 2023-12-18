@@ -131,7 +131,7 @@ export default function Home() {
                                             onChange={(e) => handleCheckBoxChange(e.target.checked, e.target.value, questions?.[currentQuestion - 1])} 
                                             checked={response?.[questions?.[currentQuestion - 1]?.QUESTION_ID]?.includes(curr)}
                                         />
-                                        <label for={curr} className="px-3">{curr}</label>
+                                        <label for={curr} className="px-3 text-black-500">{curr}</label>
                                     </div>
                                 ))
                             }
