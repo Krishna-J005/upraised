@@ -59,6 +59,9 @@ export default function Home() {
         }
     };
 
+    const handleCancel = () => {
+        router.push('/');
+    }
     const handleRadioChange = (value, que) => {
         setResponse({...response, [que.QUESTION_ID]: value})
     };
@@ -82,7 +85,7 @@ export default function Home() {
 
     return (
         <div className="h-screen flex items-end justify-center">
-            <div className="w-full h-4/5 rounded-t-3xl  px-4 pb-4 bg-white">
+            <div className="w-full  rounded-t-3xl  px-4 pb-4 bg-white">
                 {/* Question Number and Progress Bar */}
                 <div className='flex justify-center -translate-y-8'>
                     <div className='w-28 h-28 pa-5 rounded-full flex justify-center items-center bg-white'>
@@ -114,7 +117,7 @@ export default function Home() {
                                 questions?.[currentQuestion - 1]?.RESPONSE_DETAILS.map((curr,id) => (
                                 <div key={id} className="w-80 p-5 mb-3 border-2 rounded-xl">
                                         <input type="radio" value={curr} onChange={(e) => handleRadioChange(e.target.value, questions?.[currentQuestion - 1])} checked={response?.[questions?.[currentQuestion - 1]?.QUESTION_ID] === curr} />
-                                        <label for={curr} className="px-3 text-gray-500">{curr}</label>
+                                        <label for={curr} className="px-3 text-gray-900">{curr}</label>
                                 </div>
                             ))
                           }
