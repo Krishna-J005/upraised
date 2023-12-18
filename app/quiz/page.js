@@ -106,13 +106,13 @@ export default function Home() {
                 }
                 {/* Questions and Options */}
                 <div className="flex justify-center py-3">
-                    <div className='text-black-500 text-xl pb-2 w-80'>
+                    <div className='text-gray-900 text-xl pb-2 w-80'>
                         {questions?.[currentQuestion-1]?.QUESTION}
                     </div>
                 </div>
                 <div className="flex justify-center pb-3">
                     {questions?.[currentQuestion - 1]?.QUESTION_TYPE === 'MCQ_SINGLE' ? 
-                        <div className='text-black-400' >
+                        <div className='text-gray-600' >
                           {
                                 questions?.[currentQuestion - 1]?.RESPONSE_DETAILS.map((curr,id) => (
                                 <div key={id} className="w-80 p-5 mb-3 border-2 rounded-xl">
@@ -123,7 +123,7 @@ export default function Home() {
                           }
                         </div>
                         :
-                        <div className='text-black-400' >
+                        <div className='text-gray-600' >
                             {
                                 questions?.[currentQuestion - 1]?.RESPONSE_DETAILS.map((curr, id) => (
                                     <div key={id} className="w-80 p-5 mb-3 border-2 rounded-xl">
@@ -134,7 +134,7 @@ export default function Home() {
                                             onChange={(e) => handleCheckBoxChange(e.target.checked, e.target.value, questions?.[currentQuestion - 1])} 
                                             checked={response?.[questions?.[currentQuestion - 1]?.QUESTION_ID]?.includes(curr)}
                                         />
-                                        <label for={curr} className="px-3 text-gray-500">{curr}</label>
+                                        <label for={curr} className="px-3 text-gray-900">{curr}</label>
                                     </div>
                                 ))
                             }
