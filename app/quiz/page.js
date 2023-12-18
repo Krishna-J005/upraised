@@ -14,14 +14,14 @@ export default function Home() {
 
 
     const getAllQuestions = async () => {
-        const resp = await fetch('http://localhost:3000/api/quiz')
+        const resp = await fetch('https://upraised-dusky.vercel.app/api/quiz')
         let result = await resp.json();
         setTotalQuestions(result?.questions?.length);
         setQuestions(result?.questions);
     }
     const submitResponse = async (payload) => {
         try {
-            const resp = await fetch('http://localhost:3000/api/quiz', {
+            const resp = await fetch('https://upraised-dusky.vercel.app/api/quiz', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
